@@ -28,7 +28,6 @@ class MovieViewSet(viewsets.ModelViewSet):
             stars = request.data['stars']
             user = request.user
             print('user ', user)
-            # user = User.objects.get(id=1)
             try:
                 rating = Rating.objects.get(user=user.id, movie=movie.id)
                 rating.stars = stars
